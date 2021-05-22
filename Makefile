@@ -3,14 +3,14 @@
 ##################################################
 VERSION		   ?= main
 IMAGE_REGISTRY ?= ghcr.io
-IMAGE_REPO     ?= kedacore
+IMAGE_REPO     ?= raspberrypoulk
 
 IMAGE_CONTROLLER = $(IMAGE_REGISTRY)/$(IMAGE_REPO)/keda:$(VERSION)
 IMAGE_ADAPTER    = $(IMAGE_REGISTRY)/$(IMAGE_REPO)/keda-metrics-apiserver:$(VERSION)
 
 IMAGE_BUILD_TOOLS = $(IMAGE_REGISTRY)/$(IMAGE_REPO)/build-tools:main
 
-ARCH       ?=amd64
+ARCH       ?=arm64
 CGO        ?=0
 TARGET_OS  ?=linux
 
