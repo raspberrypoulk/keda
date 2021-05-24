@@ -28,7 +28,7 @@ GOBIN=$(shell go env GOBIN)
 endif
 
 GO_BUILD_VARS= GO111MODULE=on CGO_ENABLED=$(CGO) GOOS=$(TARGET_OS) GOARCH=$(ARCH)
-GO_LDFLAGS="-X=github.com/kedacore/keda/v2/version.GitCommit=$(GIT_COMMIT) -X=github.com/kedacore/keda/v2/version.Version=$(VERSION)"
+GO_LDFLAGS="-X=github.com/raspberrypoulk/keda/v2/version.GitCommit=$(GIT_COMMIT) -X=github.com/raspberrypoulk/keda/v2/version.Version=$(VERSION)"
 
 ##################################################
 # All                                            #

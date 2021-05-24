@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM golang:1.15.6 as builder
+FROM arm64v8/ubuntu:20.10 as builder
 
 ARG BUILD_VERSION=main
 ARG GIT_COMMIT=HEAD
@@ -32,7 +32,7 @@ RUN VERSION=${BUILD_VERSION} GIT_COMMIT=${GIT_COMMIT} GIT_VERSION=${GIT_VERSION}
 
 # Use distroless as minimal base image to package the manager binary
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
-FROM gcr.io/distroless/static:nonroot
+FROM arm64v8/ubuntu:20.10
 WORKDIR /
 COPY --from=builder --chown=nonroot:nonroot /apiserver.local.config  /apiserver.local.config
 COPY --from=builder /workspace/bin/keda-adapter .
